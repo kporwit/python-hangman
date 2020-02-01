@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from functions import word_check, print_hangman
+from functions import word_check, print_hangman, check_guessed_letter
  
 print "WELCOME TO THE HANGMAN GAME"
 print_hangman(12) #at 12 the full hangman picture is printed
