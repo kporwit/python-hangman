@@ -6,6 +6,17 @@ def word_check(given_word):
             return 1
     return 0
 
+def check_guessed_letter(guessed_letter, word):
+    index = []
+    for letter in word:
+        if(letter == guessed_letter):
+            index.append(guessed_letter)
+        else:
+            index.append(0)
+    if( word.find(guessed_letter) >= 0):
+        return index
+    else:
+        return False
 
 def print_hangman(wrong_guesses):
     if( wrong_guesses == 1 ):

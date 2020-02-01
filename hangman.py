@@ -1,17 +1,6 @@
+#!/usr/bin/env python
 from functions import word_check, print_hangman
  
-def check_guessed_letter(guessed_letter, word):
-    index = []
-    for letter in word:
-        if(letter == guessed_letter):
-            index.append(guessed_letter)
-        else:
-            index.append(0)
-    if( word.find(guessed_letter) >= 0):
-        return index
-    else:
-        return False
-        
 print "WELCOME TO THE HANGMAN GAME"
 print_hangman(12) #at 12 the full hangman picture is printed
 word_check_return = 1
@@ -54,4 +43,3 @@ if(wrong_guesses == 12):
     print "You lost!"
 else:
     print "Congratulations. You win!"
-
