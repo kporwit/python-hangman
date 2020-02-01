@@ -1,7 +1,6 @@
 from functions import word_check, print_hangman
  
 def check_guessed_letter(guessed_letter, word):
-    print "letter", guessed_letter, "word", word
     index = []
     for letter in word:
         if(letter == guessed_letter):
@@ -22,22 +21,23 @@ while word_check_return != 0:
     word_check_return = word_check(word)
 
 letters_count = len(word)
-template = "_"*letters_count
+template = "Word: "
+template += "_"*letters_count
 print "Let's start the game..."
 print template
-guessed_letter = raw_input("Guess the letter: ")
-tries = 1
+wrong_guesses, good_guesses = 1, 1
 template_list = [0] * letters_count
-while(tries != 13):
+while(wrong_guesses != 12):
+    guessed_letter = raw_input("Guess the letter: ")
     index = check_guessed_letter(guessed_letter, word)
     if(index == False):
         print "Wrong guess"
         print template
-        print_hangman(tries)
-        tries += 1
+        wrong_guesses += 1
     else:
         print "Nice!"
-        template = ""
+        good_guesses += 1
+        template = "Word: "
         for iter in xrange(0, letters_count):
             if(index[iter] != 0):
                 template_list[iter] = index[iter]
@@ -47,7 +47,11 @@ while(tries != 13):
            else:
                template += '_'
         print template
-
-
-    guessed_letter = raw_input("Guess the letter: ")
+    print_hangman(wrong_guesses)
+    if(template_list.count(0) == 0):
+        break
+if(wrong_guesses == 12):
+    print "You lost!"
+else:
+    print "Congratulations. You win!"
 
