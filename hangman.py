@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 from functions import word_check, print_hangman, check_guessed_letter
+import getpass
  
 print "WELCOME TO THE HANGMAN GAME"
 print_hangman(12) #at 12 the full hangman picture is printed
 word = 1
 
 while word == 1:
-    word = raw_input("Define word for guessing: ")
+    word = getpass.getpass("Ask other person to define word for guessing\n(the\
+ input is hiden): ")
     word = word_check(word)
 
 letters_count = len(word)

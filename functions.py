@@ -1,6 +1,12 @@
 def word_check(given_word):
-    if not given_word:
+    if( not given_word):
         print "Word must conatin only letters. Try again."
+        return 1
+    elif( len(given_word) < 4):
+        print "Please try harder! At least four signs."
+        return 1
+    elif( len(given_word) > 40):
+        print "Hold on cowboy, that is a really long world! 40 signs maximum."
         return 1
     given_word = given_word.lower()
     for letter in given_word:
