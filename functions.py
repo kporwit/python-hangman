@@ -1,10 +1,13 @@
 def word_check(given_word):
+    if not given_word:
+        print "Word must conatin only letters. Try again."
+        return 1
     given_word = given_word.lower()
     for letter in given_word:
         if(letter.isalpha() == False):
             print "Word must conatin only letters. Try again."
             return 1
-    return 0
+    return given_word
 
 def check_guessed_letter(guessed_letter, word):
     index = []

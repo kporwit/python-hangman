@@ -3,11 +3,11 @@ from functions import word_check, print_hangman, check_guessed_letter
  
 print "WELCOME TO THE HANGMAN GAME"
 print_hangman(12) #at 12 the full hangman picture is printed
-word_check_return = 1
+word = 1
 
-while word_check_return != 0:
+while word == 1:
     word = raw_input("Define word for guessing: ")
-    word_check_return = word_check(word)
+    word = word_check(word)
 
 letters_count = len(word)
 template = "Word: "
