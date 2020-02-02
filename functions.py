@@ -19,6 +19,12 @@ def check_guessed_letter(guessed_letter, word):
     if( not guessed_letter):
         print "This counts as wrong answer. Insert letter next time."
         return False
+    elif( len(guessed_letter) > 1):
+        print "This counts as wrong answer. Insert ONE letter next time."
+        return False
+    elif( guessed_letter.isalpha() == False):
+        print "This counts as wrong answer. Insert ONLY alphabet character next time."
+        return False
     index = []
     for letter in word:
         if(letter == guessed_letter):
