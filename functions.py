@@ -16,6 +16,9 @@ def word_check(given_word):
     return given_word
 
 def check_guessed_letter(guessed_letter, word):
+    if( not guessed_letter):
+        print "This counts as wrong answer. Insert letter next time."
+        return False
     index = []
     for letter in word:
         if(letter == guessed_letter):
