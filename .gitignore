@@ -1,2 +1,7 @@
 #ignore all pyc files
 *.pyc
+
+*.spec
+
+build/
+dist/
