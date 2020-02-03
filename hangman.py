@@ -21,7 +21,7 @@ template_list = [0] * letters_count
 written_letter_list = []
 while(wrong_guesses != 12):
     guessed_letter = raw_input("Guess the letter: ")
-    index = check_guessed_letter(guessed_letter, word)
+    index = check_guessed_letter(guessed_letter, word, written_letter_list)
     written_letter_list.append(guessed_letter)
     if(index == False):
         print "Wrong guess"

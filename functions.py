@@ -15,7 +15,7 @@ def word_check(given_word):
             return 1
     return given_word
 
-def check_guessed_letter(guessed_letter, word):
+def check_guessed_letter(guessed_letter, word, written_letter_list):
     if( not guessed_letter):
         print "This counts as wrong answer. Insert letter next time."
         return False
@@ -25,6 +25,12 @@ def check_guessed_letter(guessed_letter, word):
     elif( guessed_letter.isalpha() == False):
         print "This counts as wrong answer. Insert ONLY alphabet character next time."
         return False
+    for item in written_letter_list:
+        if( item == guessed_letter ):
+            print "This counts as a wrong answer. You already wrote that\
+ letter!"
+            return False
+
     index = []
     for letter in word:
         if(letter == guessed_letter):
